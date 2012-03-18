@@ -47,7 +47,15 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   | Chicken Run             | G      | 21-Jun-2000  |
 
 Scenario: no ratings selected
-  # see assignment
+    Given I uncheck the following ratings: PG, R, G, PG-13, NC-17
+    
+    And I press "Refresh"
+    
+    Then I should not see any of the movies
 
 Scenario: all ratings selected
-  # see assignment
+  Given I check the following ratings: PG, R, G, PG-13, NC-17
+
+  And I press "Refresh"
+
+  Then I should see all of the movies
