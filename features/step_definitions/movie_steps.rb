@@ -28,3 +28,17 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   #   iterate over the ratings and reuse the "When I check..." or
   #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
 end
+
+Then /I should see the movies/ do |movies_table|
+  movies_table.hashes.each do |movie|
+    step %Q{I should see "#{movie[:title]}"}
+  end
+  # assert false, "Unimplemented"
+end
+
+Then /I should not see the movies/ do |movies_table|
+  movies_table.hashes.each do |movie|
+    step %Q{I should not see "#{movie[:title]}"}
+  end
+  # assert false, "Unimplemented"
+end

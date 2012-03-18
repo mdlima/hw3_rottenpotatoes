@@ -90,8 +90,16 @@ When /^(?:|I )check "([^"]*)"$/ do |field|
   check(field)
 end
 
+When /^(?:|I )check rating "([^"]*)"$/ do |field|
+  check("ratings_" + field)
+end
+
 When /^(?:|I )uncheck "([^"]*)"$/ do |field|
   uncheck(field)
+end
+
+When /^(?:|I )uncheck rating "([^"]*)"$/ do |field|
+  uncheck("ratings_" + field)
 end
 
 When /^(?:|I )choose "([^"]*)"$/ do |field|
