@@ -43,6 +43,7 @@ end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
+  # puts page.body
 end
 
 When /^(?:|I )go to (.+)$/ do |page_name|
@@ -51,10 +52,12 @@ end
 
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
+  # puts page.body
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
+  # puts page.body
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
